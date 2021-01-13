@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section,
+h1 {
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 1080px) {
+  .icons img:hover {
+    background: red;
+  }
+}
+
+body {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+  -ms-grid-columns: 1fr;
+      grid-template: repeat(3, 1fr)/1fr;
+  background-image: url("../images/bg-stars.svg"), -webkit-gradient(linear, left top, left bottom, from(#343650), to(#191a24));
+  background-image: url("../images/bg-stars.svg"), linear-gradient(to bottom, #343650, #191a24);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #191a24;
+  color: white;
+  position: relative;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */

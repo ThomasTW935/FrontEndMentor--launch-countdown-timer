@@ -1,0 +1,9 @@
+@media screen and (min-width: 1080px) {
+  .icons {
+    img {
+      &:hover {
+        background: red;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$grayBlue: hsl(237, 18%, 59%);
+$softRed: hsl(345, 95%, 68%);
+
+// ### Neutral
+
+$white: hsl(0, 0%, 100%);
+$darkDesaturatedBlue: hsl(236, 21%, 26%);
+$veryDarkBlue: hsl(235, 16%, 14%);
+$veryVeryDarkBlue: hsl(234, 17%, 12%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import "./_mobile";
+@import "./_desktop";
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+  background-image: url("../images/bg-stars.svg"), linear-gradient(to bottom, $darkDesaturatedBlue, $veryVeryDarkBlue);
+  justify-content: space-between;
+  align-items: center;
+  background-color: $veryVeryDarkBlue;
+  color: $white;
+  position: relative;
+}
+.icons {
+  display: flex;
+}
+.attribution {
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
