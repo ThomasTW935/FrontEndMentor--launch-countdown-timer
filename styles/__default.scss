@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   background-image: url("../images/bg-stars.svg"), linear-gradient(to bottom, $veryDarkBlue, $veryVeryDarkBlue);
   background-repeat: no-repeat;
-  color: $white;
+  color: $grayBlue;
 }
 h1 {
   text-transform: uppercase;
@@ -27,6 +27,44 @@ h1 {
 .countdown {
   display: flex;
   justify-content: space-evenly;
+  &__Card {
+    height: 5em;
+    width: 5em;
+    background: $darkDesaturatedBlue;
+    position: relative;
+    color: $softRed;
+    span {
+      position: absolute;
+      z-index: 99;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.8em;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 48%;
+      left: -10%;
+      border-radius: 5px;
+    }
+    &::before {
+      top: 0;
+      background: hsl(236, 21%, 20%);
+    }
+    &::after {
+      bottom: 0;
+      background: $darkDesaturatedBlue;
+    }
+  }
+  &__Label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin: 1.5em 0;
+  }
 }
 .footer {
   position: relative;
