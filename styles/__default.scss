@@ -26,7 +26,8 @@ h1 {
 }
 .countdown {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3vmax;
   &__Card {
     height: 5em;
     width: 5em;
@@ -80,6 +81,12 @@ h1 {
       &:hover {
         fill: $softRed;
       }
+    }
+  }
+  .bg-hills {
+    img {
+      height: auto;
+      width: 100%;
     }
   }
   .attribution {

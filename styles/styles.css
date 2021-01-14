@@ -41,9 +41,10 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 3vmax;
 }
 
 .countdown__Card {
@@ -115,6 +116,11 @@ h1 {
 
 .footer .icons svg:hover {
   fill: #fb6087;
+}
+
+.footer .bg-hills img {
+  height: auto;
+  width: 100%;
 }
 
 .footer .attribution {
