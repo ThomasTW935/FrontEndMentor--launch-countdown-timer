@@ -63,6 +63,8 @@ h1 {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 2.8em;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .countdown__Card::before, .countdown__Card::after {
