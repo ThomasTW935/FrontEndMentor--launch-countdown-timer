@@ -53,37 +53,73 @@ h1 {
   background: #343650;
   position: relative;
   color: #fb6087;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.countdown__Card span {
+.countdown__Card .countdown__Card--Animation {
+  opacity: 0;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.countdown__Card .countdown__Card--Middle {
+  font-size: 2.8em;
   position: absolute;
-  z-index: 99;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 2.8em;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
 }
 
-.countdown__Card::before, .countdown__Card::after {
-  content: "";
-  position: absolute;
+.countdown__Card div {
+  font-size: 2.8em;
+  position: relative;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000;
+          perspective: 1000;
   width: 120%;
   height: 48%;
   left: -10%;
+  overflow: hidden;
   border-radius: 5px;
 }
 
-.countdown__Card::before {
-  top: 0;
+.countdown__Card--Top {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  background: #343650;
+}
+
+.countdown__Card--Top span {
+  top: 35%;
+}
+
+.countdown__Card--Bottom {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
   background: #282a3e;
 }
 
-.countdown__Card::after {
-  bottom: 0;
-  background: #343650;
+.countdown__Card--Bottom span {
+  bottom: 35%;
+}
+
+.countdown__Card span {
+  position: absolute;
+  width: 100%;
+  text-align: center;
 }
 
 .countdown__Label {
