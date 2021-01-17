@@ -1,4 +1,7 @@
 function CountdownUpdate(date) {
+  let labelDays = document.querySelector('#days')
+  let labelHours = document.querySelector('#hours')
+  let labelMinutes = document.querySelector('#minutes')
   let x = setInterval(() => {
     let now = new Date().getTime();
     let distance = date - now;
@@ -12,9 +15,6 @@ function CountdownUpdate(date) {
 
     // Display time in Countdown Timer
 
-    let labelDays = document.querySelector('#days')
-    let labelHours = document.querySelector('#hours')
-    let labelMinutes = document.querySelector('#minutes')
     let cardSeconds = document.querySelector('#seconds')
 
     CardAnimation(cardSeconds, seconds)
@@ -39,13 +39,16 @@ async function CardAnimation(card, seconds) {
 
   // Style change
 
-  StyleChange([cardMid, cardTop, cardBot])
+  StyleChange([cardTop, cardBot])
 
   // Count change
-  await timer(500)
-  RemoveClass([cardMid, cardTop, cardBot])
-  await timer(500)
+  // await timer(500)
+  // RemoveAllChildNodes(card)
+  // await timer(700)
+  // CreateElements(card, seconds)
   CountChange([cardMid, cardTopSpan, cardBotSpan], seconds)
+  // await timer(200)
+  // RemoveClass([cardTop, cardBot])
 
 }
 function StyleChange(elements) {
@@ -62,6 +65,39 @@ function RemoveClass(elements) {
     element.classList.remove('countdown__Card--Animation')
   })
 }
+// function CreateElements(parent, count) {
+//   let mid = document.createElement('span')
+//   let top = document.createElement('div')
+//   let bot = document.createElement('div')
+
+//   mid.classList.add('countdown__Card--Middle')
+//   top.classList.add('countdown__Card--Top')
+//   bot.classList.add('countdown__Card--Bottom')
+
+//   let topSpan = document.createElement('span')
+//   let botSpan = document.createElement('span')
+
+//   let midText = document.createTextNode(count)
+//   let topSpanText = document.createTextNode(count)
+//   let botSpanText = document.createTextNode(count)
+
+//   mid.appendChild(midText)
+
+//   topSpan.appendChild(topSpanText)
+//   botSpan.appendChild(botSpanText)
+
+//   top.appendChild(topSpan)
+//   bot.appendChild(botSpan)
+
+//   parent.appendChild(mid)
+//   parent.appendChild(top)
+//   parent.appendChild(bot)
+// }
+// function RemoveAllChildNodes(parent) {
+//   while (parent.firstChild) {
+//     parent.removeChild(parent.firstChild)
+//   }
+// }
 function CountChange(elements, count) {
   elements.forEach(element => {
     element.innerHTML = (count < 10) ? `0${count}` : count;

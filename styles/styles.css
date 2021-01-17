@@ -66,9 +66,38 @@ h1 {
 }
 
 .countdown__Card .countdown__Card--Animation {
-  opacity: 0;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  -webkit-animation: CardFlip 1s infinite ease-out;
+          animation: CardFlip 1s infinite ease-out;
+}
+
+@-webkit-keyframes CardFlip {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes CardFlip {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
 }
 
 .countdown__Card .countdown__Card--Middle {
