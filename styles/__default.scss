@@ -53,15 +53,52 @@ h1 {
       }
     }
 
-    .countdown__Card--Middle {
-      font-size: 2.8em;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    // .countdown__Card--Middle {
+    //   font-size: 2.8em;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   height: 100%;
+    //   width: 100%;
+
+    // }
     div {
       font-size: 2.8em;
+    }
+    &--Middle {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      &::before,
+      &::after {
+        // content: "";
+        height: 48%;
+        width: 120%;
+        position: absolute;
+        left: -10%;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+      &::before {
+        background: $darkDesaturatedBlue;
+      }
+      &::after {
+        bottom: 0;
+        background: hsl(236, 21%, 20%);
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 100;
+        background: transparent;
+      }
+    }
+    &--Top,
+    &--Bottom {
       position: relative;
       transition: 0.8s;
       transform-style: preserve-3d;
@@ -71,6 +108,12 @@ h1 {
       left: -10%;
       overflow: hidden;
       border-radius: 5px;
+      z-index: 1000;
+      span {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+      }
     }
     &--Top {
       transform-origin: 0 0;
@@ -85,11 +128,6 @@ h1 {
       span {
         bottom: 35%;
       }
-    }
-    span {
-      position: absolute;
-      width: 100%;
-      text-align: center;
     }
   }
   &__Label {

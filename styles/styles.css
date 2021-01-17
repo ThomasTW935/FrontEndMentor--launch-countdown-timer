@@ -100,17 +100,46 @@ h1 {
   }
 }
 
-.countdown__Card .countdown__Card--Middle {
+.countdown__Card div {
   font-size: 2.8em;
+}
+
+.countdown__Card--Middle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.countdown__Card--Middle::before, .countdown__Card--Middle::after {
+  height: 48%;
+  width: 120%;
+  position: absolute;
+  left: -10%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.countdown__Card--Middle::before {
+  background: #343650;
+}
+
+.countdown__Card--Middle::after {
+  bottom: 0;
+  background: #282a3e;
+}
+
+.countdown__Card--Middle span {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 100;
+  background: transparent;
 }
 
-.countdown__Card div {
-  font-size: 2.8em;
+.countdown__Card--Top, .countdown__Card--Bottom {
   position: relative;
   -webkit-transition: 0.8s;
   transition: 0.8s;
@@ -123,6 +152,13 @@ h1 {
   left: -10%;
   overflow: hidden;
   border-radius: 5px;
+  z-index: 1000;
+}
+
+.countdown__Card--Top span, .countdown__Card--Bottom span {
+  position: absolute;
+  width: 100%;
+  text-align: center;
 }
 
 .countdown__Card--Top {
@@ -143,12 +179,6 @@ h1 {
 
 .countdown__Card--Bottom span {
   bottom: 35%;
-}
-
-.countdown__Card span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
 }
 
 .countdown__Label {
