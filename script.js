@@ -34,7 +34,6 @@ async function CardAnimation(card, seconds) {
   let cardMid = card.childNodes[1]
   let cardTop = card.childNodes[3]
   let cardBot = card.childNodes[5]
-  let cardMidSpan = cardMid.childNodes[0]
   let cardTopSpan = cardTop.childNodes[0]
   let cardBotSpan = cardBot.childNodes[0]
 
@@ -47,7 +46,7 @@ async function CardAnimation(card, seconds) {
   // RemoveAllChildNodes(card)
   // await timer(700)
   // CreateElements(card, seconds)
-  CountChange([cardMidSpan, cardTopSpan, cardBotSpan], seconds)
+  CountChange([cardMid, cardTopSpan, cardBotSpan], seconds)
   // await timer(200)
   // RemoveClass([cardTop, cardBot])
 

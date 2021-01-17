@@ -37,6 +37,22 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    &::before,
+    &::after {
+      content: "";
+      height: 48%;
+      width: 120%;
+      position: absolute;
+      left: -10%;
+      border-radius: 5px;
+    }
+    &::before {
+      background: $darkDesaturatedBlue;
+    }
+    &::after {
+      bottom: 0;
+      background: hsl(236, 21%, 20%);
+    }
     .countdown__Card--Animation {
       animation: CardFlip 1s infinite ease-out;
     }
@@ -44,61 +60,25 @@ h1 {
       0% {
         opacity: 1;
         transform: rotateX(0);
-      }
-      80% {
-        opacity: 0;
+        z-index: 100;
       }
       100% {
+        opacity: 0;
         transform: rotateX(360deg);
+        z-index: 1;
       }
     }
-
-    // .countdown__Card--Middle {
-    //   font-size: 2.8em;
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   height: 100%;
-    //   width: 100%;
-
-    // }
-    div {
+    .countdown__Card--Middle {
       font-size: 2.8em;
-    }
-    &--Middle {
       position: absolute;
-      height: 100%;
-      width: 100%;
-      &::before,
-      &::after {
-        // content: "";
-        height: 48%;
-        width: 120%;
-        position: absolute;
-        left: -10%;
-        overflow: hidden;
-        border-radius: 5px;
-      }
-      &::before {
-        background: $darkDesaturatedBlue;
-      }
-      &::after {
-        bottom: 0;
-        background: hsl(236, 21%, 20%);
-      }
-      span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 100;
-        background: transparent;
-      }
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
     }
     &--Top,
     &--Bottom {
+      font-size: 2.8em;
       position: relative;
       transition: 0.8s;
       transform-style: preserve-3d;
@@ -106,9 +86,8 @@ h1 {
       width: 120%;
       height: 48%;
       left: -10%;
-      overflow: hidden;
       border-radius: 5px;
-      z-index: 1000;
+      overflow: hidden;
       span {
         position: absolute;
         width: 100%;
